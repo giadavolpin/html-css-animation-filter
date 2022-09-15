@@ -65,14 +65,14 @@
     transition: 2s;   
 }
 .ex-7-img:hover {
-    filter: grayscale(6) sepia(5);
+    filter: contrast(400%);
 }
 .ex-8-img{
     width: 400px;
     transition: 2s;
 }
-.ex-8-img:hover {
-    filter: sepia(7);
+.ex-8-img:hover {  
+    filter: drop-shadow(8px 8px 10px rgb(66, 64, 64));
     border-radius: 30px;
 }
 .ex-9-img {
@@ -88,8 +88,28 @@
 .ex-10-icon {
     font-size: 60px;
 }
+.ex-10-icon {
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate (1turn);
+    }
+}
+
 .ex-11-icon {
-    font-size: 60px;
+    animation: parte 2s linear;
+}
+@keyframes parte {
+    0% {
+        transform: rotate(0);
+    }
+    90% {
+        transform: rotate(315deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
 }
 .ex-12-button, .ex-13-button {
     position: relative;
@@ -120,34 +140,89 @@
     width: 60px;
     height: 20px;
 }
-.margin-top-15 {
-    margin-top: 15px;
+.ex-12-button:hover .ex-12-top-white {
+    animation: TopWhite 2s linear;
 }
-.margin-top-30 {
-    margin-top: 30px;
+@keyframes TopWhite {
+    0% {
+        left: 10%;
+    }
+    50% {
+        left: calc(100% - 60px);
+    }
+    100% {
+        left: 10%;
+    }
 }
-.margin-top-45 {
-    margin-top: 45px;
+.ex-12-button:hover .ex-12-bottom-white {
+    animation: BottomWhite 2s linear;
 }
-.margin-top-60 {
-    margin-top: 60px;
+@keyframes BottomWhite {
+    0% {
+        right: 20%;
+    }
+    50% {
+        right: calc(100% - 60px);
+    }
+    100% {
+        right: 20%;
+    }
 }
-.margin-top-75 {
-    margin-top: 75px;
+.ex-13-button:hover .ex-13-top-white {
+    animation: TopWhiteComplet 2s linear;
 }
-
-.margin-bottom-15 {
-    margin-bottom: 15px;
+@keyframes TopWhiteComplet {
+    0% {
+        left: 10%;
+        top: -10px;
+    }
+    30% {
+        left: calc(100% - 30px);
+        top: -10px;
+    }
+    45% {
+        left: calc(100% - 30px);
+        top: 100%;
+    }
+    75% {
+        left: 0;
+        top: 100%;
+    }
+    90% {
+        left: -15px;
+        top: -10px;
+    }
+    100% {
+        left: 10%;
+        top: -10px;
+    }
 }
-.margin-bottom-30 {
-    margin-bottom: 30px;
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: BottomWhiteComplet 2s linear;
 }
-.margin-bottom-45 {
-    margin-bottom: 45px;
-}
-.margin-bottom-60 {
-    margin-bottom: 60px;
-}
-.margin-bottom-75 {
-    margin-bottom: 75px;
+@keyframes BottomWhiteComplet {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+    30% {
+        right: calc(100% - 30px);
+        bottom: -10px;
+    }
+    45% {
+        right: calc(100% - 30px);
+        bottom: 100%;
+    }
+    75% {
+        right: 0;
+        bottom: 100%;
+    }
+    90% {
+        right: -15px;
+        bottom: -10px;
+    }
+    100% {
+        bottom: -10px;
+        right: 20%;
+    }
 }
